@@ -1,9 +1,6 @@
-﻿using System;
-using System.Reactive.Linq;
-using System.Web;
+﻿using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using SignalR.Reactive.Demo.Models;
 
 namespace SignalR.Reactive.Demo
 {

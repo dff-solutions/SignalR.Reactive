@@ -1,0 +1,136 @@
+﻿<style >
+
+    html,body{
+    width:100%;
+    height:100%;
+}
+
+body{
+    position:relative;
+}
+
+#wrapper{
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    border:1px solid #333;      
+}
+
+#upperPanel{
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:100px;
+}
+
+#chat{
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:200px; 
+    background:#666;  
+    overflow:auto;    
+}
+
+#groups{
+    position: absolute;
+    top:0;
+    bottom:0;
+    width:200px;
+    right:0; 
+    background:#999; 
+    overflow:auto;   
+}
+
+#groups ul{
+    text-align:left;
+    padding: 0;
+}
+
+#groups li{
+    list-style: none;
+}
+
+#bottomPanel{
+    height: 100px;
+    background:#EEE;
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    right:0px;
+}
+
+#bottomPanel textarea{
+    position:absolute;
+    top:10px;
+    bottom:10px;
+    left:10px;
+    right:120px; 
+    resize: none;
+}
+
+#bottomPanel input[type=submit]{
+    position:absolute;
+    top:10px;
+    bottom:10px;
+     right:10px;
+    width:100px;
+}
+    
+
+</style>
+
+
+<div id="wrapper">
+    <div id="upperPanel">
+        <div id="chat">
+            <ul id="message-list">
+
+            </ul>
+        </div>
+        <div id="groups">
+            <ul id="groups-list">
+            </ul>
+        </div>
+    </div>
+    <div id="bottomPanel">
+        <textarea id="inputField">
+        </textarea>
+        <input id="chat-send" type="submit" value="send" />
+    </div>
+</div>
+
+<script type="text/javascript" src="/signalr/hubs"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var myHub = $.connection.rxHub,
+            $inputsendBtn = $('#chat-send'),
+            $input = $('#inputField'),
+            $messageList = $('#message-list'),
+            $groupsList = $('#groups-list');
+
+        var group = window.prompt("Join a Group?", "");
+        var $li = $('<li>').text(group);
+        $groupsList.append($li);
+
+        myHub.server.observe('NewMessage').subscribe(function (message) {
+            window.console && console.log(message);
+            var $li = $('<li>').text(message);
+            $messageList.append($li);
+        });
+
+        $.connection.hub.start().done(function () {
+            myHub.server.join(group);
+            $inputsendBtn.click(function () {
+                myHub.server.sendMessage($input.val(), group);
+                $input.val('');
+            });
+        });
+
+    });
+</script>

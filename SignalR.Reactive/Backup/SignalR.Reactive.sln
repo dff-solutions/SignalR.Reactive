@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Reactive", "SignalR.Reactive\SignalR.Reactive.csproj", "{2F4D1483-3A2E-4983-8EA4-75243C6759E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Reactive.Demo", "SignalR.Reactive.Demo\SignalR.Reactive.Demo.csproj", "{714C2309-1C19-4BC9-B375-0D9B749B47B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F4D1483-3A2E-4983-8EA4-75243C6759E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F4D1483-3A2E-4983-8EA4-75243C6759E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F4D1483-3A2E-4983-8EA4-75243C6759E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F4D1483-3A2E-4983-8EA4-75243C6759E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714C2309-1C19-4BC9-B375-0D9B749B47B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714C2309-1C19-4BC9-B375-0D9B749B47B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714C2309-1C19-4BC9-B375-0D9B749B47B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714C2309-1C19-4BC9-B375-0D9B749B47B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,25 @@
+﻿<div style="width: 200px; height: 200px; background: grey" id="shape"></div>
+
+<script type="text/javascript" src="/signalr/hubs"></script>
+<script type="text/javascript">
+
+    $(function () {
+        var myHub = $.connection.rxHub,
+            $shape = $('#shape');
+
+        myHub.server.observe('ShapeMoved').subscribe(function (data) {
+            if ($.connection.hub.id !== data.Cid) {
+                $shape.css({ left: data.X, top: data.Y });
+            }
+        });
+
+        $.connection.hub.start().done(function () {
+            $shape.draggable({
+                drag: function () {
+                    myHub.server.moveShape(this.offsetLeft, this.offsetTop || 0);
+                }
+            });
+        });
+
+    });
+</script>

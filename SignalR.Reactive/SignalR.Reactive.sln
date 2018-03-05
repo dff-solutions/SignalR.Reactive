@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2036
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Reactive", "SignalR.Reactive\SignalR.Reactive.csproj", "{2F4D1483-3A2E-4983-8EA4-75243C6759E4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalR.Reactive.Demo", "SignalR.Reactive.Demo\SignalR.Reactive.Demo.csproj", "{714C2309-1C19-4BC9-B375-0D9B749B47B2}"
@@ -22,5 +24,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4053C760-DD6E-4EEA-9E8E-3C51612EA2C2}
 	EndGlobalSection
 EndGlobal
